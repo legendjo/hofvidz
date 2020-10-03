@@ -27,6 +27,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+''' REDIRECT '''
+LOGIN_URL = 'login'                #Dont show he nasty http://127.0.0.1:8000/accounts/profile/ page once login
+LOGIN_REDIRECT_URL = 'home'        #LIf Login success redirected to home
+LOGOUT_REDIRECT_URL = 'home'
+
 
 # Application definition
 

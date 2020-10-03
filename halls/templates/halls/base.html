@@ -62,17 +62,17 @@
                 <a class="nav-link" href="#">Dashboard</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Logout</a>
+                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
               </li>
             {% else %}
             <li class="nav-item">
-               <a class="nav-link" href="#">Login</a>
+               <a class="nav-link" href="{% url 'login' %}">Login</a>
             </li>
             {% endif %}
             {% if user.is_authenticated == False %}
             <br /> <br />
             <li class="nav-item">
-              <a class="btn btn-outline-primary" href="#">Signup</a>
+              <a class="btn btn-outline-primary" href="{% url 'signup' %}">Signup</a>
             </li>
             {% endif %}
           </ul>
