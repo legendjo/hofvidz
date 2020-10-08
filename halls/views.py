@@ -9,7 +9,11 @@ from .models import Hall
 def home(request):
     return render(request, 'halls/home.html')
 
+def dashboard(request):
+    return render(request, 'halls/dashboard.html')
+
 '''
+    #SignUp:
     It is important to use [registration] here its Djnago's registration keyword,
     else if you use something differnt you will have to created a custome view for that to work
 
@@ -21,6 +25,7 @@ def home(request):
     5-login the user
     return view
 '''
+#Signup
 class SignUp(generic.CreateView ):
     form_class = UserCreationForm
     success_url = reverse_lazy('home')
@@ -58,3 +63,7 @@ class CreateHall(generic.CreateView):
         form.instance.user = self.request.user
         super(CreateHall, self).form_valid(form)
         return redirect('home') # we will later correct and redirect to a user' halls
+
+class DetailHall(generic.DetailView):
+    model = Hall
+    template_name = 'halls/detail_hall.html'
