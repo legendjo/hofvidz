@@ -4,11 +4,11 @@
 
 {% block content %}
 <div class="container">
-  <h2>Create Hall</h2>
+  <h2>Create Hall of Fame</h2>
   <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit" value="" class="btn btn-primary">Create Hall</button>
+    <button type="submit" value="" class="btn btn-primary">Create</button>
   </form>
 </div>
 {% endblock %}

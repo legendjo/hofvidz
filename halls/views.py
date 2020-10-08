@@ -64,7 +64,7 @@ class CreateHall(generic.CreateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
         super(CreateHall, self).form_valid(form)
-        return redirect('home') # we will later correct and redirect to a user' halls
+        return redirect('dashboard') # we will later correct and redirect to a user' halls
 
 
 '''
@@ -73,3 +73,14 @@ https://docs.djangoproject.com/en/2.2/ref/class-based-views/generic-editing/#for
 class DetailHall(generic.DetailView):
     model = Hall
     template_name = 'halls/detail_hall.html'
+
+class UpdateHall(generic.UpdateView):
+    model = Hall
+    template_name = 'halls/update_hall.html'
+    fields = ['title']
+    success_url = reverse_lazy('dashboard')
+
+class DeleteHall(generic.DeleteView):
+    model = Hall
+    template_name = 'halls/delete_hall.html'
+    success_url = reverse_lazy('dashboard')
