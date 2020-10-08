@@ -9,6 +9,7 @@ from .models import Hall
 def home(request):
     return render(request, 'halls/home.html')
 
+
 def dashboard(request):
     return render(request, 'halls/dashboard.html')
 
@@ -25,6 +26,7 @@ def dashboard(request):
     5-login the user
     return view
 '''
+
 #Signup
 class SignUp(generic.CreateView ):
     form_class = UserCreationForm
@@ -64,6 +66,10 @@ class CreateHall(generic.CreateView):
         super(CreateHall, self).form_valid(form)
         return redirect('home') # we will later correct and redirect to a user' halls
 
+
+'''
+https://docs.djangoproject.com/en/2.2/ref/class-based-views/generic-editing/#formview
+'''
 class DetailHall(generic.DetailView):
     model = Hall
     template_name = 'halls/detail_hall.html'
