@@ -6,18 +6,14 @@
   <h3>Create Video</h3>
   <form method="post">
     {% csrf_token %}
-    <!-- {% for field in form %}
-    {{ field.errors }}
-    <div class="fieldWrapper">
-        {{ field.errors }}
-        {{ field.label_tag }} {{ field }}
-    </div>
-    {% endfor %} -->
+      {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Create</button>
+  </form>
+  <br/>
 
-    <table>
-      {{ form.as_table }}
-    </table>
-    <button type="submit" value="" class="btn btn-primary">Create</button>
+  <h4>Alternatively search for a video</h4>
+  <form>
+    {{ search_form }}
   </form>
 </div>
 {% endblock %}

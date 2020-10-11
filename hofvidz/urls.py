@@ -34,6 +34,6 @@ urlpatterns = [
     path('halloffame/<int:pk>/update', views.UpdateHall.as_view(), name='update_hall'),
     path('halloffame/<int:pk>/delete', views.DeleteHall.as_view(), name='delete_hall'),
     #Video
-    path('halloffame/<int:pk>/add_video', views.add_video, name='add_video'),
+    path('halloffame/<int:pk>/addvideo', views.add_video, name='add_video'),
 
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
