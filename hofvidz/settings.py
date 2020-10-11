@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'halls',   # or 'halls.apps.HallsConfig',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
