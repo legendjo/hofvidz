@@ -5,6 +5,9 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
 from .models import Hall, Video
 from .forms import VideoForm, SearchForm
+from django.forms import formset_factory
+
+YOUTUBE_API_KEY ='AIzaSyBIKGPZFh9Puj8SuUShxrpwHxwTTwedUQU'
 
 # Create your views here.
 def home(request):
@@ -15,9 +18,9 @@ def dashboard(request):
 
 #ModelForm
 #  https://docs.djangoproject.com/en/3.1/topics/forms/modelforms/
-def add_video(request, pk):                        #N:B- pk here refers to a hall id, the video will be addded to
-    form = VideoForm()                             #An empty form
-    search_form = SearchForm()                     #Instantiate an empty SearchForm object
+def add_video(request, pk):                             #N:B- pk here refers to a hall id, the video will be addded to
+    form = VideoForm()                                  #An empty form
+    search_form = SearchForm()                          #Instantiate an empty SearchForm object
 
     if request.method == 'POST':
         #Create video
